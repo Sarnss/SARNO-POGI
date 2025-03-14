@@ -83,8 +83,11 @@ public class usersForm extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(255, 29, 29));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        BackPanel.setBackground(new java.awt.Color(198, 20, 17));
+        BackPanel.setBackground(new java.awt.Color(160, 3, 0));
         BackPanel.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                BackPanelMouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 BackPanelMouseEntered(evt);
             }
@@ -114,7 +117,7 @@ public class usersForm extends javax.swing.JFrame {
 
         jScrollPane1.setViewportView(usersTable);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 30, 850, 350));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 30, 840, 350));
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -137,9 +140,9 @@ public class usersForm extends javax.swing.JFrame {
         jLabel4.setForeground(new java.awt.Color(153, 153, 153));
         jLabel4.setText("ADD");
         p_add.add(jLabel4);
-        jLabel4.setBounds(50, 10, 40, 17);
+        jLabel4.setBounds(40, 10, 30, 20);
 
-        jPanel2.add(p_add, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 110, 130, 40));
+        jPanel2.add(p_add, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, 120, 40));
 
         UserID.setBackground(new java.awt.Color(0, 0, 0));
         UserID.setFont(new java.awt.Font("Arial", 1, 10)); // NOI18N
@@ -170,9 +173,9 @@ public class usersForm extends javax.swing.JFrame {
             }
         });
         p_edit.add(jLabel7);
-        jLabel7.setBounds(50, 10, 40, 17);
+        jLabel7.setBounds(40, 10, 40, 20);
 
-        jPanel2.add(p_edit, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 160, 130, 40));
+        jPanel2.add(p_edit, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 210, 120, 40));
 
         jLabel5.setBackground(new java.awt.Color(0, 0, 0));
         jLabel5.setFont(new java.awt.Font("Arial", 1, 10)); // NOI18N
@@ -183,13 +186,13 @@ public class usersForm extends javax.swing.JFrame {
         jLabel3.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(153, 153, 153));
         jLabel3.setText("USERS");
-        jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 80, 50, -1));
+        jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 130, 50, -1));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/login-background.jpg"))); // NOI18N
         jLabel2.setText("jLabel2");
-        jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 150, 350));
+        jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 160, 350));
 
-        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 30, 150, 370));
+        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 30, 160, 350));
 
         pack();
         setLocationRelativeTo(null);
@@ -277,6 +280,12 @@ public class usersForm extends javax.swing.JFrame {
     private void jLabel7MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel7MouseEntered
 
     }//GEN-LAST:event_jLabel7MouseEntered
+
+    private void BackPanelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BackPanelMouseClicked
+        adminDashboard ads=new adminDashboard();
+        ads.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_BackPanelMouseClicked
 
     /**
      * @param args the command line arguments

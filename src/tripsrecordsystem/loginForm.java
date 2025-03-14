@@ -8,7 +8,9 @@ package tripsrecordsystem;
 import admin.adminDashboard;
 import config.Session;
 import config.dbConnector;
+import config.passwordHasher;
 import java.awt.Color;
+import java.security.NoSuchAlgorithmException;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import javax.swing.JOptionPane;
@@ -34,11 +36,23 @@ public class loginForm extends javax.swing.JFrame {
     static String type;
     
     public static boolean loginAcc(String username, String password){
-        dbConnector connector = new dbConnector();
+        dbConnector connector = new dbConnector(); 
+        
+        
+        
+        
         try{
-            String query = "SELECT * FROM tbl_user  WHERE u_username = '" + username + "' AND u_password = '" + password + "'";
+            String query = "SELECT * FROM tbl_user  WHERE u_username = '" + username + "'";
             ResultSet resultSet = connector.getData(query);
             if(resultSet.next()){
+                
+                
+            
+                String hashedPass = resultSet.getString("u_password");
+                String rehashedPass = passwordHasher.hashPassword(password);
+                
+                if(hashedPass.equals(rehashedPass)){
+                    
                 status = resultSet.getString("u_status");
                 type = resultSet.getString("u_type");
                 Session sess = Session.getInstance();
@@ -48,14 +62,19 @@ public class loginForm extends javax.swing.JFrame {
                 sess.setUsername(resultSet.getString("u_username"));
                 sess.setType(resultSet.getString("u_type"));
                 sess.setStatus(resultSet.getString("u_status")); 
-                return true;    
+                return true; 
+                    
+                }else{ 
+                    return false; 
+                    
+                }   
             }else{
                 return false;
             }
-        }catch (SQLException ex) {
+        }catch (SQLException | NoSuchAlgorithmException ex) {
             return false;
         }
-
+      
     }
 
     /**
@@ -112,7 +131,7 @@ public class loginForm extends javax.swing.JFrame {
 
         jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/login-background.jpg"))); // NOI18N
         jLabel7.setText("jLabel7");
-        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 30, 170, 210));
+        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 30, 170, 200));
 
         jLabel1.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
@@ -137,7 +156,7 @@ public class loginForm extends javax.swing.JFrame {
         pass.setBackground(new java.awt.Color(215, 215, 215));
         jPanel3.add(pass, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 90, 240, -1));
 
-        jButton1.setBackground(new java.awt.Color(255, 51, 51));
+        jButton1.setBackground(new java.awt.Color(160, 3, 0));
         jButton1.setForeground(new java.awt.Color(204, 204, 204));
         jButton1.setText("LOGIN");
         jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -155,7 +174,7 @@ public class loginForm extends javax.swing.JFrame {
         });
         jPanel3.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 130, 70, 20));
 
-        jLabel4.setFont(new java.awt.Font("Tahoma", 0, 8)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(102, 102, 102));
         jLabel4.setText("No account? Click Here to Register");
         jLabel4.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -163,7 +182,7 @@ public class loginForm extends javax.swing.JFrame {
                 jLabel4MouseClicked(evt);
             }
         });
-        jPanel3.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 130, -1, 10));
+        jPanel3.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 130, 150, 10));
 
         jLabel2.setBackground(new java.awt.Color(0, 0, 0));
         jLabel2.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
@@ -187,13 +206,13 @@ public class loginForm extends javax.swing.JFrame {
         jPanel6.setBackground(new java.awt.Color(255, 29, 29));
         jPanel3.add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 240, 490, 20));
 
-        getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 30, 350, 210));
+        getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 30, 350, 200));
 
         jPanel5.setBackground(new java.awt.Color(255, 29, 29));
         getContentPane().add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(-140, 0, 660, 30));
 
         jPanel4.setBackground(new java.awt.Color(255, 29, 29));
-        getContentPane().add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 240, 520, 20));
+        getContentPane().add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 230, 520, 30));
 
         pack();
         setLocationRelativeTo(null);

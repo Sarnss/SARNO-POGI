@@ -14,6 +14,7 @@ public class Session {
     private static Session instance;
     private int uid;
     private String cname;
+    private String ucnumber;
     private String email;
     private String username;
     private String type;
@@ -47,6 +48,15 @@ public class Session {
 
     public void setCname(String cname) {
         this.cname = cname;
+    }
+    
+    
+    public String getUcnumber() {
+        return ucnumber;
+    }
+
+    public void setUcnumber(String ucnumber) {
+        this.ucnumber = ucnumber;
     }
 
     
