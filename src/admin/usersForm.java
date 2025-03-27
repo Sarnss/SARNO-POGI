@@ -26,7 +26,7 @@ public class usersForm extends javax.swing.JFrame {
  
     }
     
-    Color shok = new Color(160,3,0);
+    Color shok = new Color(255,255,255);
     Color redd = new Color(198,20,17);
     
     
@@ -69,7 +69,7 @@ public class usersForm extends javax.swing.JFrame {
         jLabel7 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
@@ -80,10 +80,10 @@ public class usersForm extends javax.swing.JFrame {
         });
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel1.setBackground(new java.awt.Color(255, 29, 29));
+        jPanel1.setBackground(new java.awt.Color(204, 204, 255));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        BackPanel.setBackground(new java.awt.Color(160, 3, 0));
+        BackPanel.setBackground(new java.awt.Color(204, 204, 204));
         BackPanel.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 BackPanelMouseClicked(evt);
@@ -108,10 +108,10 @@ public class usersForm extends javax.swing.JFrame {
 
         jPanel1.add(BackPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(950, 0, 50, 30));
 
-        jLabel6.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jLabel6.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("USERS FORM");
-        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 100, 10));
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 300, 30));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1000, 30));
 
@@ -122,7 +122,7 @@ public class usersForm extends javax.swing.JFrame {
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        p_add.setBackground(new java.awt.Color(160, 3, 0));
+        p_add.setBackground(new java.awt.Color(204, 204, 255));
         p_add.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 p_addMouseClicked(evt);
@@ -136,13 +136,13 @@ public class usersForm extends javax.swing.JFrame {
         });
         p_add.setLayout(null);
 
+        jLabel4.setBackground(new java.awt.Color(0, 51, 51));
         jLabel4.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(153, 153, 153));
         jLabel4.setText("ADD");
         p_add.add(jLabel4);
         jLabel4.setBounds(40, 10, 30, 20);
 
-        jPanel2.add(p_add, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, 120, 40));
+        jPanel2.add(p_add, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 200, 120, 40));
 
         UserID.setBackground(new java.awt.Color(0, 0, 0));
         UserID.setFont(new java.awt.Font("Arial", 1, 10)); // NOI18N
@@ -150,7 +150,7 @@ public class usersForm extends javax.swing.JFrame {
         UserID.setText("ID");
         jPanel2.add(UserID, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 330, 30, -1));
 
-        p_edit.setBackground(new java.awt.Color(160, 3, 0));
+        p_edit.setBackground(new java.awt.Color(204, 204, 255));
         p_edit.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 p_editMouseClicked(evt);
@@ -165,7 +165,7 @@ public class usersForm extends javax.swing.JFrame {
         p_edit.setLayout(null);
 
         jLabel7.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(153, 153, 153));
+        jLabel7.setForeground(new java.awt.Color(51, 51, 51));
         jLabel7.setText("EDIT");
         jLabel7.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
@@ -175,7 +175,7 @@ public class usersForm extends javax.swing.JFrame {
         p_edit.add(jLabel7);
         jLabel7.setBounds(40, 10, 40, 20);
 
-        jPanel2.add(p_edit, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 210, 120, 40));
+        jPanel2.add(p_edit, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 250, 120, 40));
 
         jLabel5.setBackground(new java.awt.Color(0, 0, 0));
         jLabel5.setFont(new java.awt.Font("Arial", 1, 10)); // NOI18N
@@ -186,11 +186,10 @@ public class usersForm extends javax.swing.JFrame {
         jLabel3.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(153, 153, 153));
         jLabel3.setText("USERS");
-        jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 130, 50, -1));
+        jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, 50, -1));
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/login-background.jpg"))); // NOI18N
-        jLabel2.setText("jLabel2");
-        jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 160, 350));
+        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/application.png"))); // NOI18N
+        jPanel2.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 140, 130));
 
         getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 30, 160, 350));
 
@@ -327,12 +326,12 @@ public class usersForm extends javax.swing.JFrame {
     private javax.swing.JPanel BackPanel;
     private javax.swing.JLabel UserID;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;

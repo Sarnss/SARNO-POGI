@@ -8,7 +8,7 @@ package user;
 import config.Session;
 import java.awt.Color;
 import javax.swing.JOptionPane;
-import tripsrecordsystem.loginForm;
+import Sarnss.loginForm;
 
 /**
  *
@@ -64,13 +64,13 @@ public class accountDetails extends javax.swing.JFrame {
         });
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel2.setBackground(new java.awt.Color(255, 29, 29));
+        jPanel2.setBackground(new java.awt.Color(204, 204, 204));
 
+        jLabel4.setBackground(new java.awt.Color(0, 0, 0));
         jLabel4.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("ACCOUNT INFORMATION");
 
-        jPanel13.setBackground(new java.awt.Color(160, 3, 0));
+        jPanel13.setBackground(new java.awt.Color(204, 204, 204));
         jPanel13.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jPanel13MouseClicked(evt);
@@ -84,7 +84,6 @@ public class accountDetails extends javax.swing.JFrame {
         });
         jPanel13.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("LOG OUT");
         jLabel1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -100,7 +99,7 @@ public class accountDetails extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel4)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 351, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 346, Short.MAX_VALUE)
                 .addComponent(jPanel13, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         jPanel2Layout.setVerticalGroup(
@@ -116,16 +115,15 @@ public class accountDetails extends javax.swing.JFrame {
 
         getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 600, 30));
 
-        jPanel3.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel3.setBackground(new java.awt.Color(204, 204, 204));
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
         jPanel3.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(-20, 0, 20, 280));
 
-        jPanel1.setBackground(new java.awt.Color(160, 3, 0));
+        jPanel1.setBackground(new java.awt.Color(204, 204, 255));
 
         jLabel11.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        jLabel11.setForeground(new java.awt.Color(153, 153, 153));
         jLabel11.setText("   CHANGE PASS");
         jLabel11.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -137,36 +135,36 @@ public class accountDetails extends javax.swing.JFrame {
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel11, javax.swing.GroupLayout.DEFAULT_SIZE, 130, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel11, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
+            .addComponent(jLabel11, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
         );
 
-        jPanel3.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 140, 130, 40));
+        jPanel3.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 170, 130, 40));
 
         jLabel9.setBackground(new java.awt.Color(0, 0, 0));
         jLabel9.setFont(new java.awt.Font("Arial", 1, 10)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(255, 255, 255));
         jLabel9.setText("Current User :");
-        jPanel3.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 200, 70, -1));
+        jPanel3.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 220, 70, -1));
 
         UserID.setBackground(new java.awt.Color(0, 0, 0));
         UserID.setFont(new java.awt.Font("Arial", 1, 10)); // NOI18N
         UserID.setForeground(new java.awt.Color(255, 255, 255));
         UserID.setText("ID");
-        jPanel3.add(UserID, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 200, 30, -1));
+        jPanel3.add(UserID, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 220, 30, -1));
 
         UserCompleteName.setBackground(new java.awt.Color(255, 255, 255));
-        UserCompleteName.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        UserCompleteName.setForeground(new java.awt.Color(255, 255, 255));
+        UserCompleteName.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         UserCompleteName.setText("USER");
-        jPanel3.add(UserCompleteName, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 100, 110, 10));
+        jPanel3.add(UserCompleteName, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 130, 110, -1));
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/login-background.jpg"))); // NOI18N
-        jLabel2.setText("jLabel2");
-        jPanel3.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 150, 240));
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/profile.png"))); // NOI18N
+        jPanel3.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 130, 100));
 
         getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 30, 150, 250));
 
@@ -177,17 +175,9 @@ public class accountDetails extends javax.swing.JFrame {
         jLabel3.setForeground(new java.awt.Color(102, 102, 102));
         jLabel3.setText("Complete Name");
         jPanel12.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 70, 90, 10));
-
-        uname.setBackground(new java.awt.Color(215, 215, 215));
         jPanel12.add(uname, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 80, 140, 30));
-
-        cnumber.setBackground(new java.awt.Color(215, 215, 215));
         jPanel12.add(cnumber, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 130, 140, 30));
-
-        email1.setBackground(new java.awt.Color(215, 215, 215));
         jPanel12.add(email1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 130, 140, 30));
-
-        CompleteName.setBackground(new java.awt.Color(215, 215, 215));
         jPanel12.add(CompleteName, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 80, 140, 30));
 
         jLabel5.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N

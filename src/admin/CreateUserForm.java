@@ -6,8 +6,8 @@ import java.awt.Color;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import javax.swing.JOptionPane;
-import static tripsrecordsystem.regForm.dbemail;
-import static tripsrecordsystem.regForm.dbusername;
+import static Sarnss.regForm.dbemail;
+import static Sarnss.regForm.dbusername;
 
 /**
  *
@@ -22,7 +22,7 @@ public class CreateUserForm extends javax.swing.JFrame {
         initComponents();
     }
     
-    Color shok = new Color(160,3,0);
+    Color shok = new Color(255,255,255);
     Color redd = new Color(198,20,17);
     
     
@@ -94,9 +94,6 @@ public class CreateUserForm extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jLabel14 = new javax.swing.JLabel();
-        jLabel12 = new javax.swing.JLabel();
-        jLabel11 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         addB = new javax.swing.JButton();
@@ -111,9 +108,6 @@ public class CreateUserForm extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
-        jLabel13 = new javax.swing.JLabel();
         Cancelbutton = new javax.swing.JButton();
         jUserStatus = new javax.swing.JComboBox<>();
         jLabel15 = new javax.swing.JLabel();
@@ -121,31 +115,17 @@ public class CreateUserForm extends javax.swing.JFrame {
         jLabel16 = new javax.swing.JLabel();
         Clearb = new javax.swing.JButton();
         DeleteB = new javax.swing.JButton();
-        UpdateB = new javax.swing.JButton();
         Refresh = new javax.swing.JButton();
         pword1 = new javax.swing.JTextField();
         jLabel17 = new javax.swing.JLabel();
+        UpdateB = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel1.setBackground(new java.awt.Color(255, 29, 29));
+        jPanel1.setBackground(new java.awt.Color(204, 204, 204));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel14.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel14.setFont(new java.awt.Font("Century Schoolbook", 1, 12)); // NOI18N
-        jLabel14.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel14.setText(" TRUCKING CORP...");
-        jPanel1.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, 130, 10));
-
-        jLabel12.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel12.setFont(new java.awt.Font("Century Schoolbook", 1, 36)); // NOI18N
-        jLabel12.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel12.setText("SHOOK ");
-        jPanel1.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 40, 160, 30));
-
-        jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/rdm3_1.jpg"))); // NOI18N
-        jPanel1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 30, 200, 400));
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -153,10 +133,9 @@ public class CreateUserForm extends javax.swing.JFrame {
         jLabel3.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(102, 102, 102));
         jLabel3.setText("Complete Name");
-        jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 100, 90, 10));
+        jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 80, 90, 10));
 
-        addB.setBackground(new java.awt.Color(198, 20, 17));
-        addB.setForeground(new java.awt.Color(255, 255, 255));
+        addB.setBackground(new java.awt.Color(204, 204, 204));
         addB.setText("Add");
         addB.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
@@ -171,9 +150,9 @@ public class CreateUserForm extends javax.swing.JFrame {
                 addBActionPerformed(evt);
             }
         });
-        jPanel2.add(addB, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 10, 80, -1));
+        jPanel2.add(addB, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 360, 80, -1));
 
-        jUserType.setBackground(new java.awt.Color(255, 51, 51));
+        jUserType.setBackground(new java.awt.Color(204, 204, 255));
         jUserType.setForeground(new java.awt.Color(255, 255, 255));
         jUserType.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "USER", "ADMIN", " ", " " }));
         jUserType.addActionListener(new java.awt.event.ActionListener() {
@@ -181,66 +160,39 @@ public class CreateUserForm extends javax.swing.JFrame {
                 jUserTypeActionPerformed(evt);
             }
         });
-        jPanel2.add(jUserType, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 320, 140, 30));
-
-        pword.setBackground(new java.awt.Color(215, 215, 215));
-        jPanel2.add(pword, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 160, 140, 30));
-
-        uname.setBackground(new java.awt.Color(215, 215, 215));
-        jPanel2.add(uname, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 160, 140, 30));
-
-        cnumber.setBackground(new java.awt.Color(215, 215, 215));
-        jPanel2.add(cnumber, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 210, 140, 30));
-
-        email.setBackground(new java.awt.Color(215, 215, 215));
-        jPanel2.add(email, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 110, 140, 30));
-
-        CompleteName.setBackground(new java.awt.Color(215, 215, 215));
-        jPanel2.add(CompleteName, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 110, 140, 30));
+        jPanel2.add(jUserType, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 270, 140, 30));
+        jPanel2.add(pword, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 140, 140, 30));
+        jPanel2.add(uname, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 140, 140, 30));
+        jPanel2.add(cnumber, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 190, 140, 30));
+        jPanel2.add(email, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 90, 140, 30));
+        jPanel2.add(CompleteName, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 90, 140, 30));
 
         jLabel4.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(102, 102, 102));
         jLabel4.setText("Email");
-        jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 100, 30, 10));
+        jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 80, 30, 10));
 
         jLabel5.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(102, 102, 102));
         jLabel5.setText("Contact Number");
-        jPanel2.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 200, 90, 10));
+        jPanel2.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 180, 90, 10));
 
         jLabel6.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(102, 102, 102));
         jLabel6.setText("Username");
-        jPanel2.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 150, -1, 10));
+        jPanel2.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 130, -1, 10));
 
         jLabel7.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(102, 102, 102));
         jLabel7.setText("Account Status");
-        jPanel2.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 310, -1, 10));
+        jPanel2.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 260, -1, 10));
 
         jLabel10.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(102, 102, 102));
         jLabel10.setText("Password");
-        jPanel2.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 150, 60, 10));
+        jPanel2.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 130, 60, 10));
 
-        jLabel8.setBackground(new java.awt.Color(255, 102, 102));
-        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/123.jpg"))); // NOI18N
-        jPanel2.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 360, 60, 30));
-
-        jLabel9.setBackground(new java.awt.Color(115, 5, 5));
-        jLabel9.setFont(new java.awt.Font("Stencil", 3, 10)); // NOI18N
-        jLabel9.setForeground(new java.awt.Color(128, 0, 0));
-        jLabel9.setText("SHOOK TRUCKING");
-        jPanel2.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 480, -1, -1));
-
-        jLabel13.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel13.setFont(new java.awt.Font("Century Schoolbook", 1, 18)); // NOI18N
-        jLabel13.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel13.setText("SHOOK TRUCKING");
-        jPanel2.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 540, 200, 30));
-
-        Cancelbutton.setBackground(new java.awt.Color(198, 20, 17));
-        Cancelbutton.setForeground(new java.awt.Color(255, 255, 255));
+        Cancelbutton.setBackground(new java.awt.Color(255, 255, 255));
         Cancelbutton.setText("Cancel");
         Cancelbutton.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
@@ -257,7 +209,7 @@ public class CreateUserForm extends javax.swing.JFrame {
         });
         jPanel2.add(Cancelbutton, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 360, 80, -1));
 
-        jUserStatus.setBackground(new java.awt.Color(255, 51, 51));
+        jUserStatus.setBackground(new java.awt.Color(204, 204, 204));
         jUserStatus.setForeground(new java.awt.Color(255, 255, 255));
         jUserStatus.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "ACTIVE", "PENDING" }));
         jUserStatus.addActionListener(new java.awt.event.ActionListener() {
@@ -265,24 +217,22 @@ public class CreateUserForm extends javax.swing.JFrame {
                 jUserStatusActionPerformed(evt);
             }
         });
-        jPanel2.add(jUserStatus, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 320, 140, 30));
+        jPanel2.add(jUserStatus, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 270, 140, 30));
 
         jLabel15.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
         jLabel15.setForeground(new java.awt.Color(102, 102, 102));
         jLabel15.setText("User Type");
-        jPanel2.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 310, -1, 10));
+        jPanel2.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 260, -1, 10));
 
-        uID.setBackground(new java.awt.Color(215, 215, 215));
         uID.setEnabled(false);
-        jPanel2.add(uID, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 70, 50, 20));
+        jPanel2.add(uID, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 50, 50, 20));
 
         jLabel16.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
         jLabel16.setForeground(new java.awt.Color(102, 102, 102));
         jLabel16.setText("ID");
-        jPanel2.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 60, 10, 10));
+        jPanel2.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 40, 10, 10));
 
-        Clearb.setBackground(new java.awt.Color(198, 20, 17));
-        Clearb.setForeground(new java.awt.Color(255, 255, 255));
+        Clearb.setBackground(new java.awt.Color(204, 204, 204));
         Clearb.setText("Clear");
         Clearb.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
@@ -297,10 +247,9 @@ public class CreateUserForm extends javax.swing.JFrame {
                 ClearbActionPerformed(evt);
             }
         });
-        jPanel2.add(Clearb, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 50, 80, -1));
+        jPanel2.add(Clearb, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 410, 80, -1));
 
-        DeleteB.setBackground(new java.awt.Color(198, 20, 17));
-        DeleteB.setForeground(new java.awt.Color(255, 255, 255));
+        DeleteB.setBackground(new java.awt.Color(204, 204, 204));
         DeleteB.setText("Delete");
         DeleteB.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
@@ -315,29 +264,9 @@ public class CreateUserForm extends javax.swing.JFrame {
                 DeleteBActionPerformed(evt);
             }
         });
-        jPanel2.add(DeleteB, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 50, 80, -1));
+        jPanel2.add(DeleteB, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 410, 80, -1));
 
-        UpdateB.setBackground(new java.awt.Color(198, 20, 17));
-        UpdateB.setForeground(new java.awt.Color(255, 255, 255));
-        UpdateB.setText("Update");
-        UpdateB.setEnabled(false);
-        UpdateB.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                UpdateBMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                UpdateBMouseExited(evt);
-            }
-        });
-        UpdateB.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                UpdateBActionPerformed(evt);
-            }
-        });
-        jPanel2.add(UpdateB, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 10, 80, -1));
-
-        Refresh.setBackground(new java.awt.Color(198, 20, 17));
-        Refresh.setForeground(new java.awt.Color(255, 255, 255));
+        Refresh.setBackground(new java.awt.Color(204, 204, 204));
         Refresh.setText("Refresh");
         Refresh.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
@@ -352,22 +281,38 @@ public class CreateUserForm extends javax.swing.JFrame {
                 RefreshActionPerformed(evt);
             }
         });
-        jPanel2.add(Refresh, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 10, 80, -1));
-
-        pword1.setBackground(new java.awt.Color(215, 215, 215));
-        jPanel2.add(pword1, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 210, 140, 30));
+        jPanel2.add(Refresh, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 410, 100, -1));
+        jPanel2.add(pword1, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 190, 140, 30));
 
         jLabel17.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
         jLabel17.setForeground(new java.awt.Color(102, 102, 102));
         jLabel17.setText("Confirm Password");
-        jPanel2.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 200, 110, 10));
+        jPanel2.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 180, 110, 10));
 
-        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 30, 360, 400));
+        UpdateB.setText("Update");
+        UpdateB.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                UpdateBMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                UpdateBMouseExited(evt);
+            }
+        });
+        UpdateB.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                UpdateBActionPerformed(evt);
+            }
+        });
+        jPanel2.add(UpdateB, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 360, 90, -1));
 
-        jLabel1.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("ADMIN CREATE/ADD FORM");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, 10));
+        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 0, 360, 470));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/add-user.png"))); // NOI18N
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 40, 140, 150));
+
+        jLabel2.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel2.setText("CREATE USER !!!");
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 190, -1, 30));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -377,9 +322,7 @@ public class CreateUserForm extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 465, Short.MAX_VALUE)
-                .addContainerGap())
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -462,11 +405,12 @@ public class CreateUserForm extends javax.swing.JFrame {
     }//GEN-LAST:event_addBMouseExited
 
     private void ClearbMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ClearbMouseEntered
-        // TODO add your handling code here:
+        Clearb.setBackground(redd);                                      
+
     }//GEN-LAST:event_ClearbMouseEntered
 
     private void ClearbMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ClearbMouseExited
-        // TODO add your handling code here:
+        Clearb.setBackground(shok);                                      
     }//GEN-LAST:event_ClearbMouseExited
 
     private void ClearbActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ClearbActionPerformed
@@ -474,27 +418,32 @@ public class CreateUserForm extends javax.swing.JFrame {
     }//GEN-LAST:event_ClearbActionPerformed
 
     private void DeleteBMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_DeleteBMouseEntered
-        // TODO add your handling code here:
+      DeleteB.setBackground(redd);                                      
     }//GEN-LAST:event_DeleteBMouseEntered
 
     private void DeleteBMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_DeleteBMouseExited
-        // TODO add your handling code here:
+     DeleteB.setBackground(shok);                                      
     }//GEN-LAST:event_DeleteBMouseExited
 
     private void DeleteBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DeleteBActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_DeleteBActionPerformed
 
-    private void UpdateBMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_UpdateBMouseEntered
-        // TODO add your handling code here:
-    }//GEN-LAST:event_UpdateBMouseEntered
+    private void RefreshMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_RefreshMouseEntered
+        Refresh.setBackground(redd);                                      
+    }//GEN-LAST:event_RefreshMouseEntered
 
-    private void UpdateBMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_UpdateBMouseExited
+    private void RefreshMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_RefreshMouseExited
+        Refresh.setBackground(shok);                                      
+
+    }//GEN-LAST:event_RefreshMouseExited
+
+    private void RefreshActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RefreshActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_UpdateBMouseExited
+    }//GEN-LAST:event_RefreshActionPerformed
 
     private void UpdateBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UpdateBActionPerformed
-        if(CompleteName.getText().isEmpty()||email.getText().isEmpty()||cnumber.getText().isEmpty()
+    if(CompleteName.getText().isEmpty()||email.getText().isEmpty()||cnumber.getText().isEmpty()
             ||uname.getText().isEmpty()||pword.getText().isEmpty())
 
         {
@@ -522,21 +471,15 @@ public class CreateUserForm extends javax.swing.JFrame {
             this.dispose();
             
         }
-        
-        
     }//GEN-LAST:event_UpdateBActionPerformed
 
-    private void RefreshMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_RefreshMouseEntered
-        // TODO add your handling code here:
-    }//GEN-LAST:event_RefreshMouseEntered
+    private void UpdateBMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_UpdateBMouseEntered
+        UpdateB.setBackground(redd);                                      
+    }//GEN-LAST:event_UpdateBMouseEntered
 
-    private void RefreshMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_RefreshMouseExited
-        // TODO add your handling code here:
-    }//GEN-LAST:event_RefreshMouseExited
-
-    private void RefreshActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RefreshActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_RefreshActionPerformed
+    private void UpdateBMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_UpdateBMouseExited
+        UpdateB.setBackground(shok);                                      
+    }//GEN-LAST:event_UpdateBMouseExited
 
     /**
      * @param args the command line arguments
@@ -580,26 +523,21 @@ public class CreateUserForm extends javax.swing.JFrame {
     public javax.swing.JTextField CompleteName;
     private javax.swing.JButton DeleteB;
     private javax.swing.JButton Refresh;
-    public javax.swing.JButton UpdateB;
+    javax.swing.JButton UpdateB;
     public javax.swing.JButton addB;
     public javax.swing.JTextField cnumber;
     public javax.swing.JTextField email;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     public javax.swing.JComboBox<String> jUserStatus;
