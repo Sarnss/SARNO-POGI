@@ -17,7 +17,7 @@ public class regForm extends javax.swing.JFrame {
     public regForm() {
         initComponents(); 
     }
-    Color redd = new Color(198,20,17);
+    Color redd = new Color(0,0,153);
     Color shok = new Color(255,255,255);
     
     public static String dbemail, dbusername;
@@ -87,15 +87,17 @@ public class regForm extends javax.swing.JFrame {
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel1.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel1.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(51, 51, 255)));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel2.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(0, 0, 0)));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel3.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(102, 102, 102));
         jLabel3.setText("Complete Name");
-        jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 110, 90, 10));
+        jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 90, 90, 10));
 
         jRegister.setBackground(new java.awt.Color(204, 204, 255));
         jRegister.setText("REGISTER");
@@ -112,7 +114,7 @@ public class regForm extends javax.swing.JFrame {
                 jRegisterActionPerformed(evt);
             }
         });
-        jPanel2.add(jRegister, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 280, 130, -1));
+        jPanel2.add(jRegister, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 250, 190, 30));
 
         jUserType.setBackground(new java.awt.Color(204, 204, 204));
         jUserType.setForeground(new java.awt.Color(255, 255, 255));
@@ -122,39 +124,47 @@ public class regForm extends javax.swing.JFrame {
                 jUserTypeActionPerformed(evt);
             }
         });
-        jPanel2.add(jUserType, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 220, 140, -1));
-        jPanel2.add(uname, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 70, 140, 30));
-        jPanel2.add(cnumber, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 170, 140, 30));
-        jPanel2.add(email1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 170, 140, 30));
-        jPanel2.add(CompleteName, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 120, 140, 30));
+        jPanel2.add(jUserType, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 210, 140, -1));
+
+        uname.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 2, 1, new java.awt.Color(0, 0, 153)));
+        jPanel2.add(uname, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 50, 140, 30));
+
+        cnumber.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 2, 1, new java.awt.Color(0, 0, 153)));
+        jPanel2.add(cnumber, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 150, 140, 30));
+
+        email1.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 2, 1, new java.awt.Color(0, 0, 153)));
+        jPanel2.add(email1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 150, 140, 30));
+
+        CompleteName.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 2, 1, new java.awt.Color(0, 0, 153)));
+        jPanel2.add(CompleteName, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 100, 140, 30));
 
         jLabel4.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(102, 102, 102));
         jLabel4.setText("Email");
-        jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 160, 30, 10));
+        jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 140, 30, 10));
 
         jLabel5.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(102, 102, 102));
         jLabel5.setText("Contact Number");
-        jPanel2.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 160, 90, 10));
+        jPanel2.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 140, 90, 10));
 
         jLabel6.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(102, 102, 102));
         jLabel6.setText("Username");
-        jPanel2.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 60, -1, 10));
+        jPanel2.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 40, -1, 10));
 
         jLabel7.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(102, 102, 102));
         jLabel7.setText("User Type");
-        jPanel2.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 210, -1, 10));
+        jPanel2.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 190, -1, 10));
 
         jLabel10.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(102, 102, 102));
         jLabel10.setText("Password");
-        jPanel2.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 60, 60, 10));
+        jPanel2.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 40, 60, 10));
 
         jButton1.setBackground(new java.awt.Color(204, 204, 255));
-        jButton1.setText("Cancel");
+        jButton1.setText("CANCEL");
         jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jButton1MouseClicked(evt);
@@ -171,37 +181,39 @@ public class regForm extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
-        jPanel2.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 280, -1, -1));
+        jPanel2.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 290, 230, 30));
 
         jLabel15.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
         jLabel15.setForeground(new java.awt.Color(102, 102, 102));
         jLabel15.setText("Confirm Password");
-        jPanel2.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 110, 110, 10));
+        jPanel2.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 90, 110, 10));
 
+        pword.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 2, 1, new java.awt.Color(0, 0, 153)));
         pword.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 pwordActionPerformed(evt);
             }
         });
-        jPanel2.add(pword, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 70, 140, 30));
+        jPanel2.add(pword, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 50, 140, 30));
 
+        pword2.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 2, 1, new java.awt.Color(0, 0, 153)));
         pword2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 pword2ActionPerformed(evt);
             }
         });
-        jPanel2.add(pword2, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 120, 140, 30));
+        jPanel2.add(pword2, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 100, 140, 30));
 
-        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 0, 370, 340));
+        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 10, 360, 340));
 
-        jLabel1.setFont(new java.awt.Font("Arial", 1, 17)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Arial Black", 1, 17)); // NOI18N
         jLabel1.setText("REGISTRATION FORM");
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, -1, 50));
 
         jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/register.png"))); // NOI18N
-        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 90, 130, 150));
+        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 90, 130, 150));
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 340));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 610, 360));
 
         pack();
         setLocationRelativeTo(null);
@@ -220,7 +232,7 @@ public class regForm extends javax.swing.JFrame {
             ||uname.getText().isEmpty()||pword.getText().isEmpty())
 
         {
-            JOptionPane.showMessageDialog(null, "Fill apa ang wa na fill apan duh!");
+            JOptionPane.showMessageDialog(null, "Fill the blank!");
         }else if(pword.getText().length()< 8){
             JOptionPane.showMessageDialog(null, "Password character should be 8 above");
             pword.setText("");

@@ -27,7 +27,7 @@ public class usersForm extends javax.swing.JFrame {
     }
     
     Color shok = new Color(255,255,255);
-    Color redd = new Color(198,20,17);
+    Color redd = new Color(0,0,153);
     
     
     
@@ -55,6 +55,7 @@ public class usersForm extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jComboBox1 = new javax.swing.JComboBox<>();
         jPanel1 = new javax.swing.JPanel();
         BackPanel = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
@@ -71,6 +72,8 @@ public class usersForm extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
 
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
         addWindowListener(new java.awt.event.WindowAdapter() {
@@ -81,6 +84,7 @@ public class usersForm extends javax.swing.JFrame {
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel1.setBackground(new java.awt.Color(204, 204, 255));
+        jPanel1.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(51, 51, 255)));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         BackPanel.setBackground(new java.awt.Color(204, 204, 204));
@@ -97,7 +101,7 @@ public class usersForm extends javax.swing.JFrame {
         });
         BackPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setBackground(new java.awt.Color(0, 0, 0));
         jLabel1.setText("BACK");
         jLabel1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -115,11 +119,13 @@ public class usersForm extends javax.swing.JFrame {
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1000, 30));
 
+        usersTable.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(51, 51, 255)));
         jScrollPane1.setViewportView(usersTable);
 
         getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 30, 840, 350));
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel2.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(51, 51, 255)));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         p_add.setBackground(new java.awt.Color(204, 204, 255));
@@ -136,7 +142,7 @@ public class usersForm extends javax.swing.JFrame {
         });
         p_add.setLayout(null);
 
-        jLabel4.setBackground(new java.awt.Color(0, 51, 51));
+        jLabel4.setBackground(new java.awt.Color(0, 0, 0));
         jLabel4.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel4.setText("ADD");
         p_add.add(jLabel4);
@@ -164,6 +170,7 @@ public class usersForm extends javax.swing.JFrame {
         });
         p_edit.setLayout(null);
 
+        jLabel7.setBackground(new java.awt.Color(0, 0, 0));
         jLabel7.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(51, 51, 51));
         jLabel7.setText("EDIT");
@@ -238,31 +245,9 @@ public class usersForm extends javax.swing.JFrame {
         if(rowIndex<0){
             JOptionPane.showMessageDialog(null, "Please select Item!");
         }else{
-          
-            
-            try{
-            dbConnector dbc = new dbConnector();
-            TableModel tbl = usersTable.getModel();
-            ResultSet rs = dbc.getData("SELECT*FROM tbl_user WHERE u_id = '"+tbl.getValueAt(rowIndex, 0)+"'");
-            if(rs.next()){
-                CreateUserForm crf = new CreateUserForm();
-                crf.uID.setText(""+rs.getInt("u_id"));
-                crf.CompleteName.setText(""+rs.getString("u_name"));
-                crf.uname.setText(""+rs.getString("u_username"));
-                crf.pword.setText(""+rs.getString("u_password"));
-                crf.email.setText(""+rs.getString("u_email"));
-                crf.cnumber.setText(""+rs.getString("u_number"));
-                crf.jUserStatus.setSelectedItem(""+rs.getString("u_status"));
-                crf.jUserType.setSelectedItem(""+rs.getString("u_type"));
-                crf.addB.setEnabled(false);
-                crf.UpdateB.setEnabled(true);
-                crf.setVisible(true);
-                this.dispose();
-            }
-            }catch(SQLException ex){  
-              System.out.println(""+ex);
-            }
-        
+            EditForm ads=new EditForm();
+        ads.setVisible(true);
+        this.dispose();
         }
     
         
@@ -325,6 +310,7 @@ public class usersForm extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel BackPanel;
     private javax.swing.JLabel UserID;
+    private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;

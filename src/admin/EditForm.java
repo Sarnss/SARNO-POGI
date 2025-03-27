@@ -1,89 +1,26 @@
-
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package admin;
 
 import config.dbConnector;
-import java.awt.Color;
-import java.sql.ResultSet;
-import java.sql.SQLException;
 import javax.swing.JOptionPane;
-import static Sarnss.regForm.dbemail;
-import static Sarnss.regForm.dbusername;
 
 /**
  *
- * @author mypc
+ * @author PC1
  */
-public class CreateUserForm extends javax.swing.JFrame {
+public class EditForm extends javax.swing.JFrame {
 
     /**
-     * Creates new form AdminRegForm
+     * Creates new form EditForm
      */
-    public CreateUserForm() {
+    public EditForm() {
         initComponents();
     }
-    
-    Color shok = new Color(255,255,255);
-    Color redd = new Color(0,0,153);
-    
-    
-    public boolean duplicateCheck(){
-        dbConnector dbc = new dbConnector();
-        
-        try{
-            String query="SELECT*FROM tbl_user  WHERE u_username ='"+uname.getText()+"'OR u_email = '"+email.getText()+"'";
-            ResultSet resultSet = dbc.getData(query);
-            
-            if(resultSet.next()){
-                dbemail = resultSet.getString("u_email");
-                if(dbemail.equals(email.getText())){
-                    JOptionPane.showMessageDialog(null, "Email is already Used!");
-                    email.setText("");
-                }
-                
-               
-                dbusername = resultSet.getString("u_username");
-                if(dbusername.equals(uname.getText())){
-                    JOptionPane.showMessageDialog(null, "Username is already Used!");
-                    uname.setText("");
-                    
-                 }  
-                return true;  
-            }else{
-                return false;
-            }
-            
-        }catch(SQLException ex){
-            System.out.println(""+ex);
-            return false;
-        }
-    }
-    
-    public boolean updateCheck(){
-        dbConnector dbc = new dbConnector();
-        try{
-            String query="SELECT*FROM tbl_user  WHERE (u_username ='"+uname.getText()+"'OR u_email = '"+email.getText()+"')AND u_id != '"+uID.getText()+"'";
-            ResultSet resultSet = dbc.getData(query);
-            
-            if(resultSet.next()){
-                dbemail = resultSet.getString("u_email");
-                if(dbemail.equals(email.getText())){
-                    JOptionPane.showMessageDialog(null, "Email is already Used!");
-                    email.setText("");
-                }
-                dbusername = resultSet.getString("u_username");
-                if(dbusername.equals(uname.getText())){
-                    JOptionPane.showMessageDialog(null, "Username is already Used!");
-                    uname.setText("");   
-                 }  
-                return true;  
-            }else{
-                return false;
-            }   
-        }catch(SQLException ex){
-            System.out.println(""+ex);
-            return false;
-        }
-    }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -96,7 +33,6 @@ public class CreateUserForm extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
-        addB = new javax.swing.JButton();
         jUserType = new javax.swing.JComboBox<>();
         pword = new javax.swing.JTextField();
         uname = new javax.swing.JTextField();
@@ -116,6 +52,7 @@ public class CreateUserForm extends javax.swing.JFrame {
         Refresh = new javax.swing.JButton();
         pword1 = new javax.swing.JTextField();
         jLabel17 = new javax.swing.JLabel();
+        UpdateB = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
 
@@ -134,32 +71,10 @@ public class CreateUserForm extends javax.swing.JFrame {
         jLabel3.setText("Complete Name");
         jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 80, 90, 10));
 
-        addB.setBackground(new java.awt.Color(204, 204, 204));
-        addB.setText("Add");
-        addB.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                addBMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                addBMouseExited(evt);
-            }
-        });
-        addB.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                addBActionPerformed(evt);
-            }
-        });
-        jPanel2.add(addB, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 320, 220, 40));
-
         jUserType.setBackground(new java.awt.Color(204, 204, 255));
         jUserType.setForeground(new java.awt.Color(255, 255, 255));
         jUserType.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "USER", "ADMIN", " ", " " }));
         jUserType.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(51, 51, 255)));
-        jUserType.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jUserTypeActionPerformed(evt);
-            }
-        });
         jPanel2.add(jUserType, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 270, 140, 30));
 
         pword.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(0, 0, 153)));
@@ -203,31 +118,18 @@ public class CreateUserForm extends javax.swing.JFrame {
         jPanel2.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 130, 60, 10));
 
         Cancelbutton.setBackground(new java.awt.Color(204, 204, 204));
-        Cancelbutton.setText("Cancel");
-        Cancelbutton.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                CancelbuttonMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                CancelbuttonMouseExited(evt);
-            }
-        });
+        Cancelbutton.setText("CANCEL");
         Cancelbutton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 CancelbuttonActionPerformed(evt);
             }
         });
-        jPanel2.add(Cancelbutton, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 380, 160, 40));
+        jPanel2.add(Cancelbutton, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 393, 130, 30));
 
         jUserStatus.setBackground(new java.awt.Color(204, 204, 204));
         jUserStatus.setForeground(new java.awt.Color(255, 255, 255));
         jUserStatus.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "ACTIVE", "PENDING" }));
         jUserStatus.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(51, 51, 255)));
-        jUserStatus.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jUserStatusActionPerformed(evt);
-            }
-        });
         jPanel2.add(jUserStatus, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 270, 140, 30));
 
         jLabel15.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
@@ -246,21 +148,8 @@ public class CreateUserForm extends javax.swing.JFrame {
         jPanel2.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 40, 10, 10));
 
         Refresh.setBackground(new java.awt.Color(204, 204, 204));
-        Refresh.setText("Refresh");
-        Refresh.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                RefreshMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                RefreshMouseExited(evt);
-            }
-        });
-        Refresh.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                RefreshActionPerformed(evt);
-            }
-        });
-        jPanel2.add(Refresh, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 380, 170, 40));
+        Refresh.setText("REFRESH");
+        jPanel2.add(Refresh, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 393, 140, 30));
 
         pword1.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(0, 0, 153)));
         jPanel2.add(pword1, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 190, 140, 30));
@@ -270,33 +159,40 @@ public class CreateUserForm extends javax.swing.JFrame {
         jLabel17.setText("Confirm Password");
         jPanel2.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 180, 110, 10));
 
+        UpdateB.setBackground(new java.awt.Color(204, 204, 204));
+        UpdateB.setText("UPDATE");
+        UpdateB.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                UpdateBActionPerformed(evt);
+            }
+        });
+        jPanel2.add(UpdateB, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 330, 220, 40));
+
         jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 10, 380, 460));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/add-user.png"))); // NOI18N
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 40, 140, 150));
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/application.png"))); // NOI18N
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 30, 140, 150));
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jLabel2.setText("CREATE USER !!!");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 190, -1, 30));
+        jLabel2.setText("EDIT USER !");
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 190, -1, 30));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 560, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 571, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 481, Short.MAX_VALUE)
         );
 
         pack();
-        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void addBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addBActionPerformed
-
-        if(CompleteName.getText().isEmpty()||email.getText().isEmpty()||cnumber.getText().isEmpty()
+    private void UpdateBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UpdateBActionPerformed
+if(CompleteName.getText().isEmpty()||email.getText().isEmpty()||cnumber.getText().isEmpty()
             ||uname.getText().isEmpty()||pword.getText().isEmpty())
 
         {
@@ -305,78 +201,27 @@ public class CreateUserForm extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Password character should be 8 above");
             pword.setText("");
 
-        }else if (!pword.getText().equals(pword1.getText())) {
-            JOptionPane.showMessageDialog(null, "Passwords do not match.");
-            pword.setText("");
-            pword1.setText("");
-        }
-                      
-        else if(duplicateCheck()){
-            System.out.println("Duplicate Exist");
-
-        }
-
-        else{
-
-            dbConnector dbc=new dbConnector();
-            if(dbc.insertData("INSERT INTO tbl_user(u_name, u_email, u_number, u_username, u_password, u_status, u_type) "
-                + "VALUES('"+CompleteName.getText()+"','"+email.getText()+"','"+cnumber.getText()+"','"+uname.getText()+"','"+pword.getText()+"','"+jUserStatus.getSelectedItem()+"','"+jUserType.getSelectedItem()+"')"))
-        {
-            JOptionPane.showMessageDialog(null, "Inserted Successfully");
-            usersForm uf=new usersForm();
-            uf.setVisible(true);
-            this.dispose();
-
+       
         }else{
-            JOptionPane.showMessageDialog(null, "Connection Error!");
-
+        
+        
+        dbConnector dbc = new dbConnector();
+        dbc.updateData("UPDATE tbl_user SET u_name = '"+CompleteName.getText()+"',"
+                + "u_email ='"+email.getText()+"',"
+                + "u_number = '"+cnumber.getText()+"', "
+                + "u_username = '"+uname.getText()+"', "
+                + "u_password = '"+pword.getText()+"',"
+                + "u_status = '"+jUserStatus.getSelectedItem()+"',"
+                + "u_type = '"+jUserType.getSelectedItem()+"'WHERE u_id = '"+uID.getText()+"'");
+        
         }
-
-        }
-    }//GEN-LAST:event_addBActionPerformed
-
-    private void jUserTypeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jUserTypeActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jUserTypeActionPerformed
+            }//GEN-LAST:event_UpdateBActionPerformed
 
     private void CancelbuttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CancelbuttonActionPerformed
-        usersForm uf =new usersForm();
+    usersForm uf =new usersForm();
         uf.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_CancelbuttonActionPerformed
-
-    private void jUserStatusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jUserStatusActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jUserStatusActionPerformed
-
-    private void CancelbuttonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CancelbuttonMouseEntered
-        Cancelbutton.setBackground(redd);
-    }//GEN-LAST:event_CancelbuttonMouseEntered
-
-    private void CancelbuttonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CancelbuttonMouseExited
-        Cancelbutton.setBackground(shok);
-    }//GEN-LAST:event_CancelbuttonMouseExited
-
-    private void addBMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addBMouseEntered
-        addB.setBackground(redd);
-    }//GEN-LAST:event_addBMouseEntered
-
-    private void addBMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addBMouseExited
-        addB.setBackground(shok);
-    }//GEN-LAST:event_addBMouseExited
-
-    private void RefreshMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_RefreshMouseEntered
-        Refresh.setBackground(redd);                                      
-    }//GEN-LAST:event_RefreshMouseEntered
-
-    private void RefreshMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_RefreshMouseExited
-        Refresh.setBackground(shok);                                      
-
-    }//GEN-LAST:event_RefreshMouseExited
-
-    private void RefreshActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RefreshActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_RefreshActionPerformed
 
     /**
      * @param args the command line arguments
@@ -395,21 +240,20 @@ public class CreateUserForm extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(CreateUserForm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(EditForm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(CreateUserForm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(EditForm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(CreateUserForm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(EditForm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(CreateUserForm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(EditForm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
-        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new CreateUserForm().setVisible(true);
+                new EditForm().setVisible(true);
             }
         });
     }
@@ -418,7 +262,7 @@ public class CreateUserForm extends javax.swing.JFrame {
     private javax.swing.JButton Cancelbutton;
     public javax.swing.JTextField CompleteName;
     private javax.swing.JButton Refresh;
-    public javax.swing.JButton addB;
+    public javax.swing.JButton UpdateB;
     public javax.swing.JTextField cnumber;
     public javax.swing.JTextField email;
     private javax.swing.JLabel jLabel1;
@@ -441,4 +285,7 @@ public class CreateUserForm extends javax.swing.JFrame {
     public javax.swing.JTextField uID;
     public javax.swing.JTextField uname;
     // End of variables declaration//GEN-END:variables
+
+    
+    
 }
